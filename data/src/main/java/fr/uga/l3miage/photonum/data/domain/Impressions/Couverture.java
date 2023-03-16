@@ -1,5 +1,6 @@
-package fr.uga.l3miage.photonum.data.domain;
+package fr.uga.l3miage.photonum.data.domain.Impressions;
 
+import fr.uga.l3miage.photonum.data.domain.Photo;
 import jakarta.persistence.*;
 
 @Entity
@@ -15,7 +16,10 @@ public class Couverture {
 
     //liens
     //photo [1]
+    @OneToOne
+    private Photo photo;
     //Album [1]
-
+    @OneToOne
+    private Album album;
     // constructors, getters, and setters
 }

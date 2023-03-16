@@ -9,6 +9,8 @@ public class Album extends Impression{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "titre")
-    private String titre; 
+    @OneToOne
+    private Couverture couverture;
+
+
 }

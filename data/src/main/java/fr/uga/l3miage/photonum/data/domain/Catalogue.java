@@ -12,5 +12,9 @@ public class Catalogue {
     @Column(name="reference")
     @Enumerated(EnumType.STRING)
     private Reference reference;
+
+    @OneToOne
+    @JoinColumn(name = "article_id")
+    private Article article;
 }
 

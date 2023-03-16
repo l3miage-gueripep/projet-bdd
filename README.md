@@ -4,5 +4,4 @@ Modifiez vos login/pass dans [application.yaml](app%2Fsrc%2Fmain%2Fresources%2Fa
 
 # Rapport
 
-Voici le document du rapport du projet
-[Rapport](https://docs.google.com/document/d/1NNVyzbdgKwwQIBcis5Q7r8tSNY9zyuFuGJUvQdSdmfQ)
+Voici le document du [rapport du projet](https://docs.google.com/document/d/1NNVyzbdgKwwQIBcis5Q7r8tSNY9zyuFuGJUvQdSdmfQ)

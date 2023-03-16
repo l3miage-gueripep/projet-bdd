@@ -1,7 +1,8 @@
 package fr.uga.l3miage.photonum.data.repo;
 
 import com.github.javafaker.Faker;
-import fr.uga.l3miage.photonum.data.domain.Impression;
+
+import fr.uga.l3miage.photonum.data.domain.Impressions.Impression;
 
 import java.util.Random;
 

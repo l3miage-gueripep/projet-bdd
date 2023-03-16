@@ -2,6 +2,7 @@ package fr.uga.l3miage.photonum.data.domain;
 
 import java.util.*;
 
+import fr.uga.l3miage.photonum.data.domain.Impressions.Impression;
 import jakarta.persistence.*;
 
 @Entity
@@ -18,12 +19,19 @@ public class Article {
     @Column(nullable = false)
     private int quantite;
     
+    //associations
+
+    @OneToOne
+    @JoinColumn(name = "catalogue_id")
+    private Catalogue catalogue;
+
+    
     @ManyToMany(mappedBy = "articles")
     private List<Commande> commandes = new ArrayList<>();
-    
+
+    //impression
     @ManyToOne
-    @JoinColumn(name = "catalogue_id", nullable = false)
-    private Catalogue catalogue;
+    private Impression impression;
     
     // constructors, getters, and setters
 }

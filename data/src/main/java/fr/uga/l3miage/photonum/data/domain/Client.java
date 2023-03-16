@@ -37,6 +37,9 @@ public class Client {
     //lien avec adresse
     @OneToMany(mappedBy = "proprietaire")
     private List<Adresse> adresses = new ArrayList<>();
+    //impression
+    @OneToMany(mappedBy = "commanditaire")
+    private List<Adresse> impressions = new ArrayList<>();
     // constructors, getters, and setters
 
     //methods

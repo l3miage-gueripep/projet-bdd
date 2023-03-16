@@ -20,6 +20,8 @@ public class Commande {
     private Float prixTotal;
 
     //lien avec client
+    @ManyToOne
+    private Client client;
 
     // constructors, getters, and setters
 }

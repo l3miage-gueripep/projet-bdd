@@ -1,5 +1,8 @@
 package fr.uga.l3miage.photonum.data.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -24,10 +27,13 @@ public class Image {
     
     //lien :
     //photos
+    @OneToMany(mappedBy = "image")
+    private List<Photo> images = new ArrayList<>();
     //client
     @ManyToOne
     @JoinColumn(name = "proprietaire_id")
     private Client proprietaire;
+
 
 
     // constructors, getters, and setters
