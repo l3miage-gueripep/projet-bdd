@@ -1,6 +1,5 @@
 package fr.uga.l3miage.photonum.data.repo;
 
-//import fr.uga.l3miage.photonum.data.domain.Impression;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;

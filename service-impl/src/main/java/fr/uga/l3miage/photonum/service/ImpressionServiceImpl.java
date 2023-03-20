@@ -1,6 +1,6 @@
 package fr.uga.l3miage.photonum.service;
 
-import fr.uga.l3miage.photonum.data.domain.Impression;
+import fr.uga.l3miage.photonum.data.domain.Impressions.Impression;
 import fr.uga.l3miage.photonum.data.repo.ImpressionRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;

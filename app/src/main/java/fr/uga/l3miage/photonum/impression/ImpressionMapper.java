@@ -1,7 +1,8 @@
 package fr.uga.l3miage.photonum.impression;
 
-import fr.uga.l3miage.photonum.data.domain.Impression;
 import org.mapstruct.Mapper;
+
+import fr.uga.l3miage.photonum.data.domain.Impressions.Impression;
 
 import java.util.Collection;
 

@@ -12,7 +12,7 @@ public class Fixtures {
 
     public static Impression newImpression() {
         Impression impression = new Impression();
-        // ...
+        
         return impression;
     }
 
