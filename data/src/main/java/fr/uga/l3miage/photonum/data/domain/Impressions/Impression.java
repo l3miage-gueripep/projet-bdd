@@ -10,7 +10,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class Impression {
+public abstract class Impression {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     protected Long id;
