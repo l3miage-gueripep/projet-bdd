@@ -12,5 +12,22 @@ public class Album extends Impression{
     @OneToOne
     private Couverture couverture;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Couverture getCouverture() {
+        return couverture;
+    }
+
+    public void setCouverture(Couverture couverture) {
+        this.couverture = couverture;
+    }
+
+    
 
 }

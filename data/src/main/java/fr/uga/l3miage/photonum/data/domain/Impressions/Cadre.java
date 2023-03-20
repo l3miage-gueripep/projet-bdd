@@ -13,4 +13,14 @@ import jakarta.persistence.Table;
 public class Cadre extends Impression{
     @OneToMany
     private List<Photo> photos = new ArrayList<>();
+     //getters et setters
+    public List<Photo> getPhotos() {
+        return photos;
+    }
+
+    public void setPhotos(List<Photo> photos) {
+        this.photos = photos;
+    }
+
+    
 }

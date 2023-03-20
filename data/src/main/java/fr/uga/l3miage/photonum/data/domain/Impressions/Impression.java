@@ -26,47 +26,38 @@ public class Impression {
     //photo
     @ManyToOne
     private Photo photo;
-
+    
+      // getters and setters
     public Long getId() {
-        return this.id;
+        return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
-
     public String getNom() {
-        return this.nom;
+        return nom;
     }
-
     public void setNom(String nom) {
         this.nom = nom;
     }
-
     public List<Article> getArticles() {
-        return this.articles;
+        return articles;
     }
-
     public void setArticles(List<Article> articles) {
         this.articles = articles;
     }
-
     public Client getClient() {
-        return this.client;
+        return client;
     }
-
     public void setClient(Client client) {
         this.client = client;
     }
-
     public Photo getPhoto() {
-        return this.photo;
+        return photo;
     }
-
     public void setPhoto(Photo photo) {
         this.photo = photo;
     }
 
-    // getters and setters
-    
+
 }

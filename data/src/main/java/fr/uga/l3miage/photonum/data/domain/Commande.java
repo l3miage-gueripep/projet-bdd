@@ -24,4 +24,29 @@ public class Commande {
     private Client client;
 
     // constructors, getters, and setters
+    public Long getId(){
+        return id;
+    }
+    public void setId(Long id){
+        this.id = id;
+    }
+    public Date getDate(){
+        return date;
+    }
+    public void setDate(Date date){
+        this.date = date;
+    }
+    public Float getPrixTotal(){
+        return prixTotal;
+    }
+    public void setPrixTotal(Float prixTotal){
+        this.prixTotal= prixTotal;
+    }
+    public Client getClient() {
+        return client;
+    }
+    public void setClient(Client client) {
+        this.client = client;
+    }
+    
 }

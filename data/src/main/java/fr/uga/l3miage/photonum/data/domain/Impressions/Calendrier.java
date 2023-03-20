@@ -11,5 +11,16 @@ public class Calendrier extends Impression {
     //associations
     @OneToMany
     private List<Page> pages = new ArrayList<>();
+    //getters setters
+
+    public List<Page> getPages() {
+        return pages;
+    }
+
+    public void setPages(List<Page> pages) {
+        this.pages = pages;
+    }
+
+    
     
 }

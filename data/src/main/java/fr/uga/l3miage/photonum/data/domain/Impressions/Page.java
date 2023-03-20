@@ -27,11 +27,42 @@ public class Page {
     //tirage
     @ManyToOne
     private Album album;
-
+    //calendrier
     @ManyToOne
     private Calendrier calendrier;
-
     //cadre
+
+    public Long getId(){
+        return id;
+    }
+    public void setId(Long id){
+        this.id = id;
+    }
+    public int getNumPage() {
+        return numPage;
+    }
+    public void setNumPage(int numPage) {
+        this.numPage = numPage;
+    }
+    public List<Photo> getPhotos() {
+        return photos;
+    }
+    public void setPhotos(List<Photo> photos) {
+        this.photos = photos;
+    }
+    public Album getAlbum() {
+        return album;
+    }
+    public void setAlbum(Album album) {
+        this.album = album;
+    }
+    public Calendrier getCalendrier() {
+        return calendrier;
+    }
+    public void setCalendrier(Calendrier calendrier) {
+        this.calendrier = calendrier;
+    }
+    
 
 
 
