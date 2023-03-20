@@ -3,6 +3,7 @@ package fr.uga.l3miage.photonum.data.domain.Impressions;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import fr.uga.l3miage.photonum.data.domain.Article;
 import fr.uga.l3miage.photonum.data.domain.Client;
 import fr.uga.l3miage.photonum.data.domain.Photo;
@@ -10,7 +11,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public abstract class Impression {
+public class Impression {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     protected Long id;
@@ -27,4 +28,7 @@ public abstract class Impression {
     private Photo photo;
 
     // getters and setters
+    // Impression(String nom){
+    //     this.nom = nom;
+    // }
 }
