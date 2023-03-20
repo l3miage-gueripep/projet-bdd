@@ -34,4 +34,41 @@ public class Article {
     private Impression impression;
     
     // constructors, getters, and setters
+    public Long getId(){
+        return id;
+    }
+    public void setId(Long id){
+        this.id = id;
+    }
+    public Float getPrix(){
+        return prix;
+    }
+    public void setPrix(Float prix){
+        this.prix = prix;
+    }
+    public int getQuantite(){
+        return quantite;
+    }
+    public void setQuantite(int quantite){
+        this.quantite = quantite;
+    }
+    public Catalogue getCatalogue() {
+        return catalogue;
+    }
+    public void setCatalogue(Catalogue catalogue) {
+        this.catalogue = catalogue;
+    }
+    public List<Commande> getCommandes() {
+        return commandes;
+    }
+    public void setCommandes(List<Commande> commandes) {
+        this.commandes = commandes;
+    }
+    public Impression getImpression() {
+        return impression;
+    }
+    public void setImpression(Impression impression) {
+        this.impression = impression;
+    }
+    
 }

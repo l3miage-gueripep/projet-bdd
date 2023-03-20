@@ -16,4 +16,30 @@ public class Adresse {
 
     @Column(name="rue")
     private String rue;
+    //getters et setters
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public int getCodePostal() {
+        return codePostal;
+    }
+
+    public void setCodePostal(int codePostal) {
+        this.codePostal = codePostal;
+    }
+
+    public String getRue() {
+        return rue;
+    }
+
+    public void setRue(String rue) {
+        this.rue = rue;
+    }
+    
 }

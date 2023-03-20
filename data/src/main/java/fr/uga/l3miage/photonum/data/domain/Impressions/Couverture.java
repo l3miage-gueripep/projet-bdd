@@ -21,5 +21,30 @@ public class Couverture {
     //Album [1]
     @OneToOne
     private Album album;
-    // constructors, getters, and setters
+    // getters, and setters
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public String getTitre() {
+        return titre;
+    }
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+    public Photo getPhoto() {
+        return photo;
+    }
+    public void setPhoto(Photo photo) {
+        this.photo = photo;
+    }
+    public Album getAlbum() {
+        return album;
+    }
+    public void setAlbum(Album album) {
+        this.album = album;
+    }
+    
 }

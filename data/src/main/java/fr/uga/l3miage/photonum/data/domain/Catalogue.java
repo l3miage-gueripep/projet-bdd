@@ -16,5 +16,23 @@ public class Catalogue {
     @OneToOne
     @JoinColumn(name = "article_id")
     private Article article;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Reference getReference() {
+        return reference;
+    }
+
+    public void setReference(Reference reference) {
+        this.reference = reference;
+    }
+
+    
 }
 

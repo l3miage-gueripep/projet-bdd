@@ -10,7 +10,6 @@ import jakarta.persistence.*;
 public class Client {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String email;
     
     @Column(name = "password")
@@ -43,4 +42,62 @@ public class Client {
     public void telecharger(){
         //todo?
     }
+    public List<Image> getImages() {
+        return images;
+    }
+
+    public void setImages(List<Image> images) {
+        this.images = images;
+    }
+    public String getEmail(){
+        return email;
+    }
+    public void setEmail(String email){
+        this.email = email;
+    }
+   public String getPassword (){
+    return password;
+   }
+   public void setPassWord(String password){
+    this.password = password;
+   }
+   public String getFirstName(){
+     return firstName;
+    }
+    public void setFirstName(String firstName){
+        this.firstName = firstName;
+    }
+    public String getLastName(){
+        return firstName;
+    }
+    public void setLastName(String lastName){
+        this.lastName = lastName;
+    }
+    public String getAdress(){
+        return address;
+    }
+    public void setAdress(String adress){
+           this.address = adress;
+    }
+    public List<Commande> getCommandes() {
+        return commandes;
+    }
+    public void setCommandes(List<Commande> commandes) {
+        this.commandes = commandes;
+    }
+    public List<Adresse> getAdresses() {
+        return adresses;
+    }
+    public void setAdresses(List<Adresse> adresses) {
+        this.adresses = adresses;
+    }
+    public List<Adresse> getImpressions() {
+        return impressions;
+    }
+    public void setImpressions(List<Adresse> impressions) {
+        this.impressions = impressions;
+    }
+
+
+    
 }

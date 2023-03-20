@@ -48,5 +48,78 @@ public class Photo {
     //couverture
     @OneToOne
     private Couverture couverture;
-    // constructors, getters, and setters
+    // getters, and setters
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getParametres() {
+        return parametres;
+    }
+
+    public void setParametres(String parametres) {
+        this.parametres = parametres;
+    }
+
+    public String getTexteDescriptif() {
+        return texteDescriptif;
+    }
+
+    public void setTexteDescriptif(String texteDescriptif) {
+        this.texteDescriptif = texteDescriptif;
+    }
+
+    public List<Impression> getImpressions() {
+        return impressions;
+    }
+
+    public void setImpressions(List<Impression> impressions) {
+        this.impressions = impressions;
+    }
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
+    }
+
+    public Tirage getTirage() {
+        return tirage;
+    }
+
+    public void setTirage(Tirage tirage) {
+        this.tirage = tirage;
+    }
+
+    public Cadre getCadre() {
+        return cadre;
+    }
+
+    public void setCadre(Cadre cadre) {
+        this.cadre = cadre;
+    }
+
+    public Page getPage() {
+        return page;
+    }
+
+    public void setPage(Page page) {
+        this.page = page;
+    }
+
+    public Couverture getCouverture() {
+        return couverture;
+    }
+
+    public void setCouverture(Couverture couverture) {
+        this.couverture = couverture;
+    }
+    
 }
