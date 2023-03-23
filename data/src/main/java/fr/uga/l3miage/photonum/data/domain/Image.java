@@ -28,10 +28,10 @@ public class Image {
     //lien :
     //photos
     @OneToMany(mappedBy = "image")
-    private List<Photo> images = new ArrayList<>();
+    private List<Photo> photos = new ArrayList<>();
     //client
     @ManyToOne
-    @JoinColumn(name = "proprietaire_id")
+    @JoinColumn(name = "proprietaire")
     private Client proprietaire;
 
     // getters, and setters
@@ -69,11 +69,11 @@ public class Image {
         this.partage = partage;
     }
 
-    public List<Photo> getImages() {
-        return images;
+    public List<Photo> getPhotos() {
+        return this.photos;
     }
-    public void setImages(List<Photo> images) {
-        this.images = images;
+    public void setPhotos(List<Photo> photos) {
+        this.photos = photos;
     }
     
     public Client getProprietaire() {

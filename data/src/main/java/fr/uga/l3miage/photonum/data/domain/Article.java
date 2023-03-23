@@ -24,7 +24,6 @@ public class Article {
     @OneToOne
     @JoinColumn(name = "catalogue_id")
     private Catalogue catalogue;
-
     
     @ManyToMany(mappedBy = "articles")
     private List<Commande> commandes = new ArrayList<>();

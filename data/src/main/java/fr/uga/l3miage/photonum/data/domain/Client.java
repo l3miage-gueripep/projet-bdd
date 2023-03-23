@@ -3,6 +3,7 @@ package fr.uga.l3miage.photonum.data.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.uga.l3miage.photonum.data.domain.Impressions.Impression;
 import jakarta.persistence.*;
 
 @Entity
@@ -35,7 +36,7 @@ public class Client {
     private List<Adresse> adresses = new ArrayList<>();
     //impression
     @OneToMany(mappedBy = "commanditaire")
-    private List<Adresse> impressions = new ArrayList<>();
+    private List<Impression> impressions = new ArrayList<>();
     // constructors, getters, and setters
 
     //methods
@@ -91,10 +92,10 @@ public class Client {
     public void setAdresses(List<Adresse> adresses) {
         this.adresses = adresses;
     }
-    public List<Adresse> getImpressions() {
+    public List<Impression> getImpressions() {
         return impressions;
     }
-    public void setImpressions(List<Adresse> impressions) {
+    public void setImpressions(List<Impression> impressions) {
         this.impressions = impressions;
     }
 

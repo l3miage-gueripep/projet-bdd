@@ -1,6 +1,8 @@
 package fr.uga.l3miage.photonum.data.domain;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.persistence.*;
 
@@ -22,6 +24,9 @@ public class Commande {
     //lien avec client
     @ManyToOne
     private Client client;
+
+    @ManyToMany
+    private List<Article> articles = new ArrayList<>();
 
     // constructors, getters, and setters
     public Long getId(){
