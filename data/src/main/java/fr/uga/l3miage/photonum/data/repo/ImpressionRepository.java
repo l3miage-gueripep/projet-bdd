@@ -47,6 +47,7 @@ public class ImpressionRepository implements CRUDRepository<Long, Impression> {
     @Override
     public List<Impression> all() {
         CriteriaQuery<Impression> query = this.cb.createQuery(Impression.class);
+        Root<Impression> root = query.from(Impression.class); //necessaire pour ne pas avoir de bug à l'execution meme si pas utilisé
         //return
         return this.entityManager.createQuery(query).getResultList();
     }
