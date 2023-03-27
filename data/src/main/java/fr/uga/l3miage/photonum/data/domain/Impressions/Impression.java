@@ -22,7 +22,7 @@ public class Impression {
     private List<Article> articles = new ArrayList<>();
     //client
     @ManyToOne
-    private Client client;
+    private Client commanditaire;
     //photo
     @ManyToOne
     private Photo photo;
@@ -46,11 +46,11 @@ public class Impression {
     public void setArticles(List<Article> articles) {
         this.articles = articles;
     }
-    public Client getClient() {
-        return client;
+    public Client getCommanditaire() {
+        return commanditaire;
     }
-    public void setClient(Client client) {
-        this.client = client;
+    public void setCommanditaire(Client commanditaire) {
+        this.commanditaire = commanditaire;
     }
     public Photo getPhoto() {
         return photo;

@@ -28,7 +28,7 @@ class ImpressionRepositoryTest extends Base {
         Impression i1 = Fixtures.newImpression();
         i1.setNom(nom1);
         Impression i2 = Fixtures.newImpression();
-        i1.setNom(nom2);
+        i2.setNom(nom2);
 
 
         //save in the database
