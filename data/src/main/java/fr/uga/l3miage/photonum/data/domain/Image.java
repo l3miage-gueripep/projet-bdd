@@ -34,6 +34,10 @@ public class Image {
     @JoinColumn(name = "proprietaire")
     private Client proprietaire;
 
+    public Image(){
+        this.partage = false;
+    }
+
     // getters, and setters
     public Long getId() {
         return id;
@@ -72,8 +76,9 @@ public class Image {
     public List<Photo> getPhotos() {
         return this.photos;
     }
-    public void setPhotos(List<Photo> photos) {
-        this.photos = photos;
+    public void addPhoto(Photo photo) {
+        this.photos.add(photo);
+        photo.setImage(this); //association
     }
     
     public Client getProprietaire() {

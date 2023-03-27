@@ -2,6 +2,8 @@ package fr.uga.l3miage.photonum.data.repo;
 
 import com.github.javafaker.Faker;
 
+import fr.uga.l3miage.photonum.data.domain.Image;
+import fr.uga.l3miage.photonum.data.domain.Photo;
 import fr.uga.l3miage.photonum.data.domain.Impressions.Impression;
 
 import java.util.Random;
@@ -15,5 +17,17 @@ public class Fixtures {
         
         return impression;
     }
+
+    public static Image newImage() {
+        Image image = new Image();
+        
+        return image;
+    }
+
+    public static Photo newPhoto(){
+        Photo photo = new Photo();
+        return photo;
+    }
+
 
 }

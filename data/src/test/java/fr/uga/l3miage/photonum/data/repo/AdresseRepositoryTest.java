@@ -13,6 +13,7 @@ public class AdresseRepositoryTest {
     @Test
     void testValidMapping() {
         
+        
     }
     
 }

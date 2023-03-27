@@ -24,8 +24,8 @@ public class Impression {
     @ManyToOne
     private Client commanditaire;
     //photo
-    @ManyToOne
-    private Photo photo;
+    @ManyToMany
+    private List<Photo> photos = new ArrayList<>();
     
       // getters and setters
     public Long getId() {
@@ -52,11 +52,11 @@ public class Impression {
     public void setCommanditaire(Client commanditaire) {
         this.commanditaire = commanditaire;
     }
-    public Photo getPhoto() {
-        return photo;
+    public List<Photo> getPhotos() {
+        return photos;
     }
-    public void setPhoto(Photo photo) {
-        this.photo = photo;
+    public void addPhoto(Photo photo) {
+        this.photos.add(photo);
     }
 
 
