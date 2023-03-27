@@ -10,7 +10,7 @@ import jakarta.persistence.*;
 public class Client {
     
     @Id
-    private String email;
+    private Long email;
     
     @Column(name = "password")
     private String password;

@@ -22,8 +22,11 @@ public class Commande {
     //lien avec client
     @ManyToOne
     private Client client;
+    //lien avec client
+    @ManyToOne
+    private Article articles;
 
-    // constructors, getters, and setters
+    // getters, and setters
     public Long getId(){
         return id;
     }
