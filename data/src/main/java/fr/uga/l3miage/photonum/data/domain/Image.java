@@ -69,7 +69,10 @@ public class Image {
     public Boolean getPartage() {
         return partage;
     }
-    public void setPartage(Boolean partage) {
+    public void setPartage(Boolean partage) throws Exception {
+        if(this.partage){
+            throw new Exception("un fichier ne peut pas etre départagé");
+        }
         this.partage = partage;
     }
 
