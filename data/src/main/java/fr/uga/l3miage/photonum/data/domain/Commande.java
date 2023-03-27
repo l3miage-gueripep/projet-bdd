@@ -25,6 +25,8 @@ public class Commande {
     @ManyToOne
     private Client client;
 
+
+    // getters, and setters
     @ManyToMany
     private List<Article> articles = new ArrayList<>();
 

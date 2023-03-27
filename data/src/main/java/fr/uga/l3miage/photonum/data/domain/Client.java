@@ -11,6 +11,9 @@ import jakarta.persistence.*;
 public class Client {
     
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String email;
     
     @Column(name = "password")
