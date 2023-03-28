@@ -3,6 +3,7 @@ package fr.uga.l3miage.photonum.data.repo;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import fr.uga.l3miage.photonum.data.domain.Image;
 import fr.uga.l3miage.photonum.data.domain.Photo;
@@ -12,6 +13,7 @@ import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 
+@Repository
 public class ImageRepository implements CRUDRepository<Long, Image>{
 
     private final EntityManager entityManager;
@@ -27,10 +29,6 @@ public class ImageRepository implements CRUDRepository<Long, Image>{
     public List<Image> all() {
         CriteriaQuery<Image> query = this.cb.createQuery(Image.class);
         Root<Image> root = query.from(Image.class);
-        
-        //predicate
-        query.orderBy(cb.asc(root.get("fullName")));
-
         //return
         return entityManager.createQuery(query).getResultList();
     }
@@ -47,8 +45,8 @@ public class ImageRepository implements CRUDRepository<Long, Image>{
                 }
             }
         }
-
         entityManager.remove(image);
+        System.out.println("Image supprimée");
         
     }
 

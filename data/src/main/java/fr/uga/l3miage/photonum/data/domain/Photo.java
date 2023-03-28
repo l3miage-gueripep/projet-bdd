@@ -25,7 +25,7 @@ public class Photo {
     private String texteDescriptif;
 
 //associations
-    @OneToMany 
+    @ManyToMany 
     private List<Impression> impressions = new ArrayList<>();
     //lien avec image
     @ManyToOne
@@ -49,6 +49,8 @@ public class Photo {
     @OneToOne
     private Couverture couverture;
     // getters, and setters
+
+    
 
     public Long getId() {
         return id;
@@ -78,8 +80,9 @@ public class Photo {
         return impressions;
     }
 
-    public void setImpressions(List<Impression> impressions) {
-        this.impressions = impressions;
+    public void addImpression(Impression impression) {
+        this.impressions.add(impression);
+        impression.addPhoto(this);
     }
 
     public Image getImage() {

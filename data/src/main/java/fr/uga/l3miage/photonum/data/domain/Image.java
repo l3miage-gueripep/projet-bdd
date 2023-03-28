@@ -34,6 +34,10 @@ public class Image {
     @JoinColumn(name = "proprietaire")
     private Client proprietaire;
 
+    public Image(){
+        this.partage = false;
+    }
+
     // getters, and setters
     public Long getId() {
         return id;
@@ -65,15 +69,19 @@ public class Image {
     public Boolean getPartage() {
         return partage;
     }
-    public void setPartage(Boolean partage) {
+    public void setPartage(Boolean partage) throws Exception {
+        if(this.partage){
+            throw new Exception("un fichier ne peut pas etre départagé");
+        }
         this.partage = partage;
     }
 
     public List<Photo> getPhotos() {
         return this.photos;
     }
-    public void setPhotos(List<Photo> photos) {
-        this.photos = photos;
+    public void addPhoto(Photo photo) {
+        this.photos.add(photo);
+        photo.setImage(this); //association
     }
     
     public Client getProprietaire() {
