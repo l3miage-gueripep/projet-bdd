@@ -32,6 +32,12 @@ public class ClientRepository implements CRUDRepository<Long, Client> {
     public List<Client> all() {
         return null;
     }
+
+
+
+    // détails de la commande d'un client avec son statut, 
+    // les informations d'un compte client, la liste des impressions d'un client avec possibilité de 
+    // détailler le contenu, la liste des images partagées. 
     
     
 }

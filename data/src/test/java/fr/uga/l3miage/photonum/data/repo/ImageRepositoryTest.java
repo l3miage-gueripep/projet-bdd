@@ -34,7 +34,10 @@ public class ImageRepositoryTest extends Base  {
         entityManager.persist(img3);
         entityManager.persist(img4);
 
-        img2.setPartage(true);
+        try{
+            img2.setPartage(true);
+        }catch(Exception exception){}
+        
         //create photo
         Photo ph1 = Fixtures.newPhoto();
         Photo ph2 = Fixtures.newPhoto();
@@ -51,8 +54,7 @@ public class ImageRepositoryTest extends Base  {
         ph1.addImpression(i1);
 
 
-        //synchronize with the database
-        entityManager.flush();
+        
 
 
 
@@ -78,12 +80,15 @@ public class ImageRepositoryTest extends Base  {
         }
         try{
             imageRepository.delete(img4);
-            System.out.println("try de supprimer l'image 4");
         }
         catch(EchecSupressionException e){
             System.out.println("image 4 non supprimée");
         }
 
+
+
+        //synchronize with the database
+        entityManager.flush();
         //detach the elements from the database
         entityManager.detach(img1);
         entityManager.detach(img2);

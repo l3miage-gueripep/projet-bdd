@@ -27,7 +27,7 @@ public class Image {
     
     //lien :
     //photos
-    @OneToMany(mappedBy = "image")
+    @OneToMany(mappedBy = "image", cascade = CascadeType.REMOVE)
     private List<Photo> photos = new ArrayList<>();
     //client
     @ManyToOne
@@ -81,7 +81,7 @@ public class Image {
     }
     public void addPhoto(Photo photo) {
         this.photos.add(photo);
-        photo.setImage(this); //association
+        // photo.setImage(this); //association
     }
     
     public Client getProprietaire() {
