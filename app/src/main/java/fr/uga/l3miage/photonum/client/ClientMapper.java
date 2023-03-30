@@ -2,17 +2,17 @@ package fr.uga.l3miage.photonum.client;
 
 import org.mapstruct.Mapper;
 
-import fr.uga.l3miage.photonum.data.domain.clients.client;
+import fr.uga.l3miage.photonum.data.domain.Client;
 
 import java.util.Collection;
 
 @Mapper(componentModel = "spring")
 public interface ClientMapper {
-    ClientDTO entityToDTO(client client);
+    ClientDTO entityToDTO(Client client);
 
-    Collection<clientDTO> entityToDTO(Iterable<client> clients);
+    Collection<ClientDTO> entityToDTO(Iterable<Client> clients);
 
-    Client dtoToEntity(clientDTO client);
+    Client dtoToEntity(ClientDTO client);
 
-    Collection<client> dtoToEntity(Iterable<clientDTO> clients);
+    Collection<Client> dtoToEntity(Iterable<ClientDTO> clients);
 }

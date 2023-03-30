@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import fr.uga.l3miage.photonum.data.domain.clients.client;
+import fr.uga.l3miage.photonum.data.domain.Client;
+import fr.uga.l3miage.photonum.service.ClientService;
 import fr.uga.l3miage.photonum.service.EntityNotFoundException;
-import fr.uga.l3miage.photonum.service.clientService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 
@@ -25,26 +25,26 @@ import jakarta.validation.constraints.NotNull;
 @RequestMapping(value = "/api/v1", produces = "application/json")
 public class ClientController {
 
-    private final clientService clientService;
-    private final clientMapper clientMapper;
+    private final ClientService clientService;
+    private final ClientMapper clientMapper;
 
     @Autowired
-    public clientController(clientService clientService, clientMapper clientMapper) {
-       this.clientService = clientService;
+    public ClientController(ClientService clientService, ClientMapper clientMapper) {
+        this.clientService = clientService;
         this.clientMapper = clientMapper;
     }
 
     @PostMapping(value = "/clients", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public clientDTO newclient(@RequestBody @Valid clientDTO client) {
+    public ClientDTO newclient(@RequestBody @Valid ClientDTO client) {
         var saved = clientService.save(clientMapper.dtoToEntity(client));
         return clientMapper.entityToDTO(saved);
     }
 
 
     @GetMapping("/clients")
-    public Collection<clientDTO> clients() {
-        Collection<client> clients;
+    public Collection<ClientDTO> clients() {
+        Collection<Client> clients;
         clients = clientService.list();
         return clients.stream()
                 .map(clientMapper::entityToDTO)
@@ -53,7 +53,7 @@ public class ClientController {
 
     
     @GetMapping("/clients/{id}")
-    public clientDTO client(@PathVariable("id") @NotNull Long id) {
+    public ClientDTO client(@PathVariable("id") @NotNull Long id) {
         try {
             return clientMapper.entityToDTO(clientService.get(id));
         } catch (EntityNotFoundException e) {
