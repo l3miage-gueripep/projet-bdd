@@ -55,12 +55,12 @@ public class ImpressionController {
                 .toList();
     }
 
-    @GetMapping("/impressions/{id}")
-    public ImpressionDTO impressions(@PathVariable("id") @NotNull Long id) {
-        try {
-            return ImpressionMapper.entityToDTO(ImpressionService.get(id));
-        } catch (EntityNotFoundException e) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, null, e);
-        }
-    }
+    // @GetMapping("/impressions/{id}")
+    // public ImpressionDTO impressions(@PathVariable("id") @NotNull Long id) {
+    //     try {
+    //         return ImpressionMapper.entityToDTO(ImpressionService.get(id));
+    //     } catch (EntityNotFoundException e) {
+    //         throw new ResponseStatusException(HttpStatus.NOT_FOUND, null, e);
+    //     }
+    // }
 }
