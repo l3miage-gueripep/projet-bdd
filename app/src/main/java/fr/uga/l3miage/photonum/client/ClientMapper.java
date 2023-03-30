@@ -1,10 +1,11 @@
 package fr.uga.l3miage.photonum.client;
 
-import org.mapstruct.Mapper;
 
 import fr.uga.l3miage.photonum.data.domain.Client;
 
 import java.util.Collection;
+
+import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface ClientMapper {
