@@ -27,12 +27,12 @@ public class ImpressionServiceImpl implements ImpressionService {
 
     @Override
     public Impression get(Long id) throws EntityNotFoundException {
-        return null;
+        return impressionRepository.get(id);
     }
 
     @Override
     public Collection<Impression> list() {
-        return null;
+        return impressionRepository.all();
     }
 
     @Override

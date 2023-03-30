@@ -27,7 +27,7 @@ public class Impression {
     @ManyToMany
     private List<Photo> photos = new ArrayList<>();
     
-      // getters and setters
+    // getters and setters
     public Long getId() {
         return id;
     }
