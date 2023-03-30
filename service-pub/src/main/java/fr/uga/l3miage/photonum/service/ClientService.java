@@ -10,7 +10,7 @@ import fr.uga.l3miage.photonum.service.base.BaseService;
 @Service
 public interface ClientService extends BaseService<Client, Long> {
 
-    Client save(Client impression);
+    Client save(Client client);
 
     Collection<Client> searchByid(String query);
 
