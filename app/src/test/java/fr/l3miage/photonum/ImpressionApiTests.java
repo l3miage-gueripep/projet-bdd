@@ -53,11 +53,11 @@ class ImpressionApiTests {
     @Test
     @Disabled
     void creationImpression() {
-        var author = new ImpressionDTO();
-        var response = this.restTemplate.postForEntity("/api/v1/impressions", author, ImpressionDTO.class);
-        assertThat(response.getStatusCode()).isEqualTo(HttpStatusCode.valueOf(201));
-        var list = this.restTemplate.getForObject("/api/v1/impressions", List.class);
-        assertThat(list)
-                .hasSize(1);
+        // var author = new ImpressionDTO();
+        // var response = this.restTemplate.postForEntity("/api/v1/impressions", author, ImpressionDTO.class);
+        // assertThat(response.getStatusCode()).isEqualTo(HttpStatusCode.valueOf(201));
+        // var list = this.restTemplate.getForObject("/api/v1/impressions", List.class);
+        // assertThat(list)
+        //         .hasSize(1);
     }
 }

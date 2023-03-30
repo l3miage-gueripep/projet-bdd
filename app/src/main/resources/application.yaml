@@ -1,9 +1,9 @@
-#spring:
+# spring:
 #  datasource:
-#    url: jdbc:mariadb:// 127.0.0.1:3306/library
-#    hikari:
-#      username: admin
-#      password: changeme
+#     url: jdbc:mariadb:// 127.0.0.1:3306/library
+#     hikari:
+#       username: admin
+#       password: changeme
 #  jpa:
 #    properties:
 #      hibernate:
@@ -16,8 +16,8 @@
 spring:
   datasource:
     url: jdbc:oracle:thin:@im2ag-oracle.univ-grenoble-alpes.fr:1521:im2ag
-    username: # à remplir
-    password:
+    username: barryma
+    password: 906e6a617f
   jpa:
     properties:
       hibernate:

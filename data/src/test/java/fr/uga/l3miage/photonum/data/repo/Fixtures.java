@@ -2,6 +2,7 @@ package fr.uga.l3miage.photonum.data.repo;
 
 import com.github.javafaker.Faker;
 
+import fr.uga.l3miage.photonum.data.domain.Adresse;
 import fr.uga.l3miage.photonum.data.domain.Image;
 import fr.uga.l3miage.photonum.data.domain.Photo;
 import fr.uga.l3miage.photonum.data.domain.Impressions.Impression;
@@ -27,6 +28,11 @@ public class Fixtures {
     public static Photo newPhoto(){
         Photo photo = new Photo();
         return photo;
+    }
+
+    public static Adresse newAdresse(){
+        Adresse adresse = new Adresse();
+        return adresse;
     }
 
 

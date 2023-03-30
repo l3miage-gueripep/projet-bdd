@@ -11,7 +11,7 @@ import jakarta.persistence.*;
 public class Commande {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Temporal(TemporalType.DATE)
@@ -28,6 +28,7 @@ public class Commande {
 
     // getters, and setters
     @ManyToMany
+    @JoinColumn(name="article_id")
     private List<Article> articles = new ArrayList<>();
 
     // constructors, getters, and setters

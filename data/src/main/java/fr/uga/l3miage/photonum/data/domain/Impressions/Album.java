@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "albums")
 public class Album extends Impression{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @OneToOne

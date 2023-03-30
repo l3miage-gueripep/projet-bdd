@@ -39,4 +39,10 @@ public class ImpressionServiceImpl implements ImpressionService {
     public Impression update(Impression object) throws EntityNotFoundException {
         return null;
     }
+
+    @Override
+    public Collection<Impression> searchByid(String query) {
+        // TODO Auto-generated method stub
+        return null;
+    }
 }

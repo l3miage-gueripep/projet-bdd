@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "catalogues")
 public class Catalogue {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(name="reference")

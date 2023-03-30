@@ -103,7 +103,5 @@ public class ImageRepositoryTest extends Base  {
         assertThat(images)
                 .hasSize(2);
 
-
-
     }
 }
