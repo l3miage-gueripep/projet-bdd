@@ -63,11 +63,19 @@ public class ImpressionController {
     }
 
     @PutMapping(value = "/impressions/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+<<<<<<< HEAD
     public ImpressionDTO updateAuthor(@RequestBody @Valid ImpressionDTO author, @NotNull @PathVariable("id") Long id) {
         try {
             if (author.id().equals(id)) {
                 impressionService.get(id);
                 var updated = impressionService.update(impressionMapper.dtoToEntity(author));
+=======
+    public ImpressionDTO updateAuthor(@RequestBody @Valid ImpressionDTO impression, @NotNull @PathVariable("id") Long id) {
+        try {
+            if (impression.id().equals(id)) {
+                impressionService.get(id);
+                var updated = impressionService.update(impressionMapper.dtoToEntity(impression));
+>>>>>>> 8a005f8a15a647843db9815eeb196e265fb383f2
                 return impressionMapper.entityToDTO(updated);
             }
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
@@ -75,6 +83,7 @@ public class ImpressionController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "author is not found", e);
         }
     }
+<<<<<<< HEAD
 /* 
     @DeleteMapping("/impressions/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
@@ -91,4 +100,6 @@ public class ImpressionController {
         }
     }
     */
+=======
+>>>>>>> 8a005f8a15a647843db9815eeb196e265fb383f2
 }
