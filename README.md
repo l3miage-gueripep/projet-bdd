@@ -7,3 +7,9 @@ Modifiez vos login/pass dans [application.yaml](app%2Fsrc%2Fmain%2Fresources%2Fa
 Voici le document du [rapport du projet](https://docs.google.com/document/d/1NNVyzbdgKwwQIBcis5Q7r8tSNY9zyuFuGJUvQdSdmfQ)
 
 Code inspiré de [la correction du TP](https://github.com/bordigoni/l3-tp-spring-boot-jpa)
+
+
+## Modele
+Nous avons utilisé ce diagramme de classe pour la conception
+
+![diagramme de classe](https://i.imgur.com/0PjGFFG.png)

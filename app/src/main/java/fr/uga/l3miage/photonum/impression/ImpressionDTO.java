@@ -9,19 +9,9 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 
 public record ImpressionDTO(
-     Long id,
-
-    @NotBlank(message = "Le nom de l'impression ne peut pas être vide")
-    String nom,
+    Long id,
     
-    Client commanditaire,
-
-    @NotEmpty(message = "L'impression doit contenir au moins un article")
-    List<Article> articles,
-
-    @NotEmpty(message = "L'impression doit contenir au moins une photo")
-    List<Photo> photos
-
-    
+    @NotBlank(message = "full name of the impresssion is mandatory")
+    String nom
 ) {
 }

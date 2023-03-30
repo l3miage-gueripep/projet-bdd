@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import fr.uga.l3miage.photonum.data.domain.Impressions.Impression;
 import fr.uga.l3miage.photonum.service.EntityNotFoundException;
-import org.springframework.web.server.ResponseStatusException;
 import fr.uga.l3miage.photonum.service.ImpressionService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
@@ -43,24 +43,21 @@ public class ImpressionController {
 
 
     @GetMapping("/impressions")
-    public Collection<ImpressionDTO> impressions(@RequestParam(value = "q", required = false) String query) {
+    public Collection<ImpressionDTO> impressions() {
         Collection<Impression> impressions;
-        if (query == null) {
-            impressions = impressionService.list();
-        } else {
-            impressions = impressionService.searchByid(query);
-        }
+        impressions = impressionService.list();
         return impressions.stream()
                 .map(impressionMapper::entityToDTO)
                 .toList();
     }
 
-    // @GetMapping("/impressions/{id}")
-    // public ImpressionDTO impressions(@PathVariable("id") @NotNull Long id) {
-    //     try {
-    //         return ImpressionMapper.entityToDTO(ImpressionService.get(id));
-    //     } catch (EntityNotFoundException e) {
-    //         throw new ResponseStatusException(HttpStatus.NOT_FOUND, null, e);
-    //     }
-    // }
+    
+    @GetMapping("/impressions/{id}")
+    public ImpressionDTO impression(@PathVariable("id") @NotNull Long id) {
+        try {
+            return impressionMapper.entityToDTO(impressionService.get(id));
+        } catch (EntityNotFoundException e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, null, e);
+        }
+    }
 }
