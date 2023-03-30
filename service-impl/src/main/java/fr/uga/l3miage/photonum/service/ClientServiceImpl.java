@@ -21,8 +21,7 @@ public class ClientServiceImpl implements ClientService{
 
     @Override
     public Client get(Long id) throws EntityNotFoundException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'get'");
+        return clientRepository.get(id);
     }
 
     @Override
@@ -31,20 +30,19 @@ public class ClientServiceImpl implements ClientService{
     }
 
     @Override
-    public Client update(Client object) throws EntityNotFoundException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
+    public Client update(Client client) throws EntityNotFoundException {
+        return clientRepository.save(client);
     }
 
     @Override
-    public Client save(Client impression) {
-        return clientRepository.save(impression);
+    public Client save(Client client) {
+        return clientRepository.save(client);
     }
 
     @Override
     public Collection<Client> searchByid(String query) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'searchByid'");
+        return clientRepository.searchByid(query);
     }
+
     
 }

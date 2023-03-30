@@ -1,5 +1,6 @@
 package fr.uga.l3miage.photonum.data.repo;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
@@ -18,11 +19,18 @@ public class ClientRepository implements CRUDRepository<Long, Client> {
         entityManager.persist(entity);
         return entity;
     }
+
     @Override
-    public Client get(Long email) {
-        return entityManager.find(Client.class, email);
+    public Client get(Long id) {
+        return entityManager.find(Client.class, id);
     }
 
+    public Collection<Client> searchByid(String query) {
+        return entityManager.createQuery("from Client a where a.id = :id order by a.id", Client.class)
+                .setParameter("id", query)
+                .getResultList();
+    }
+    
 
     @Override
     public void delete(Client client) {
