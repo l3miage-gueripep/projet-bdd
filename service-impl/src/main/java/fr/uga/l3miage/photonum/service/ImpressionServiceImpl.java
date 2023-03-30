@@ -12,17 +12,17 @@ import java.util.Collection;
 @Transactional
 public class ImpressionServiceImpl implements ImpressionService {
 
-    private final ImpressionRepository authorRepository;
+    private final ImpressionRepository impressionRepository;
 
     @Autowired
-    public ImpressionServiceImpl(ImpressionRepository authorRepository) {
-        this.authorRepository = authorRepository;
+    public ImpressionServiceImpl(ImpressionRepository impressionRepository) {
+        this.impressionRepository = impressionRepository;
     }
 
 
     @Override
     public Impression save(Impression impression) {
-        return null;
+        return impressionRepository.save(impression);
     }
 
     @Override
