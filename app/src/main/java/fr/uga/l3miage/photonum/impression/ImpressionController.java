@@ -60,5 +60,4 @@ public class ImpressionController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, null, e);
         }
     }
-
 }
