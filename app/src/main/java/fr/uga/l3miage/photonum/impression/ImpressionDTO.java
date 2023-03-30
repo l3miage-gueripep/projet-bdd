@@ -6,15 +6,22 @@ import fr.uga.l3miage.photonum.data.domain.Article;
 import fr.uga.l3miage.photonum.data.domain.Client;
 import fr.uga.l3miage.photonum.data.domain.Photo;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 
 public record ImpressionDTO(
      Long id,
 
-    @NotBlank(message = "full name of the author is mandatory")
+    @NotBlank(message = "Le nom de l'impression ne peut pas être vide")
     String nom,
-    List<Article> articles,
+    
     Client commanditaire,
 
-    Photo photo
+    @NotEmpty(message = "L'impression doit contenir au moins un article")
+    List<Article> articles,
+
+    @NotEmpty(message = "L'impression doit contenir au moins une photo")
+    List<Photo> photos
+
+    
 ) {
 }
