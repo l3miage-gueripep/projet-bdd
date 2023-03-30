@@ -12,10 +12,10 @@ public record ClientDTO(
     
     Long id,
 
-    @NotBlank(message = "Le nom de l'impression ne peut pas être vide")
+    @NotBlank(message = "le nom de l'impression ne peut pas être vide")
     String email,
     
-    @NotBlank(message = "Le mot de passe de l'impression ne peut pas être vide")
+    @NotBlank(message = "le mot de passe de l'impression ne peut pas être vide")
     String password,
     
     String firstName,

@@ -14,6 +14,6 @@ public interface ClientMapper {
     Collection<ClientDTO> entityToDTO(Iterable<Client> clients);
 
     Client dtoToEntity(ClientDTO client);
-
+    
     Collection<Client> dtoToEntity(Iterable<ClientDTO> clients);
 }
