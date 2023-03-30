@@ -12,6 +12,18 @@ public record ImpressionDTO(
     Long id,
     
     @NotBlank(message = "full name of the impresssion is mandatory")
-    String nom
+    String nom,
+
+    //associations
+    @NotEmpty(message = "articles of the impression is mandatory")
+    List<Article> articles,
+    //client
+    @NotEmpty(message = "client of the impression is mandatory")
+    Client commanditaire,
+    //photo
+    @NotEmpty(message = "photos of the impression is mandatory")
+    List<Photo> photos
+
+
 ) {
 }
