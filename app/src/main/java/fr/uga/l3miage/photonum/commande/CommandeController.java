@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import fr.CommandeService;
 import fr.uga.l3miage.photonum.data.domain.Commande;
+import fr.uga.l3miage.photonum.service.CommandeService;
 import jakarta.validation.Valid;
 
 @RestController
