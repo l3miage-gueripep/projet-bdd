@@ -38,13 +38,13 @@ public class ImageRepository implements CRUDRepository<Long, Image>{
         if(image.getPartage()){
             throw new EchecSupressionException("On ne peut pas supprimer une image partagée");
         }
-//        if(image.getPhotos().size() > 0){
-//            for(Photo photo : image.getPhotos()){
-//                if(photo.getImpressions().size() > 0){
-//                    throw new EchecSupressionException("Echec de la suppression: une impression est liée à l'une des photos de cette image");
-//                }
-//            }
-//        }
+        if(image.getPhotos().size() > 0){
+            for(Photo photo : image.getPhotos()){
+                if(photo.getImpressions().size() > 0){
+                    throw new EchecSupressionException("Echec de la suppression: une impression est liée à l'une des photos de cette image");
+                }
+            }
+        }
         entityManager.remove(image);
         System.out.println("Image supprimée");
         
@@ -57,13 +57,13 @@ public class ImageRepository implements CRUDRepository<Long, Image>{
 
     @Override
     public Image save(Image image) {
+        //defaults the partage value to false
+        if(image.getPartage() == null){
+            image.setPartage(false);
+        }
         entityManager.persist(image);
         return image;
     }
-
-
-
-
 }
 
 

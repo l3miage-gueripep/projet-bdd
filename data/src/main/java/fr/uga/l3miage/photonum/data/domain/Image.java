@@ -29,7 +29,7 @@ public class Image {
     
     //images
     @JsonIgnore
-    @OneToMany(mappedBy = "image")
+    @OneToMany(mappedBy = "image", cascade = CascadeType.MERGE)
     private List<Photo> photos = new ArrayList<>();
     //client
     @ManyToOne

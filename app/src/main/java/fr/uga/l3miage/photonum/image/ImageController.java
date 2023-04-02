@@ -4,6 +4,7 @@ package fr.uga.l3miage.photonum.image;
 import fr.uga.l3miage.photonum.client.ClientDTO;
 import fr.uga.l3miage.photonum.data.domain.Image;
 import fr.uga.l3miage.photonum.data.domain.Impressions.Impression;
+import fr.uga.l3miage.photonum.data.repo.Exceptions.EchecSupressionException;
 import fr.uga.l3miage.photonum.impression.ImpressionDTO;
 import fr.uga.l3miage.photonum.service.EntityNotFoundException;
 import fr.uga.l3miage.photonum.service.ImageService;
@@ -59,6 +60,32 @@ public class ImageController {
             return imageMapper.entityToDTO(imageService.get(id));
         } catch (EntityNotFoundException e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, null, e);
+        }
+    }
+
+    @DeleteMapping("/images/{id}")
+    public void deleteImage(@PathVariable("id") @NotNull Long id){
+        //delete image with specified id
+        try {
+            imageService.delete(id);
+        } catch (EntityNotFoundException e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, null, e);
+        } catch (EchecSupressionException e){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, null, e);
+        }
+    }
+
+
+    @PutMapping(value = "/images/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ImageDTO updateAuthor(@RequestBody @Valid ImageDTO image, @NotNull @PathVariable("id") Long id) {
+        try {
+            if (image.id().equals(id)) {
+                var updated = imageService.update(imageMapper.dtoToEntity(image));
+                return imageMapper.entityToDTO(updated);
+            }
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        } catch (EntityNotFoundException e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "author is not found", e);
         }
     }
 
