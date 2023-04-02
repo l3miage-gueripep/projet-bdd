@@ -3,6 +3,7 @@ package fr.uga.l3miage.photonum.data.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
@@ -27,8 +28,9 @@ public class Image {
     private Boolean partage;
     
     //images
-/*    @OneToMany(mappedBy = "image", cascade = CascadeType.REMOVE)
-    private List<Photo> photos = new ArrayList<>();*/
+    @JsonIgnore
+    @OneToMany(mappedBy = "image")
+    private List<Photo> photos = new ArrayList<>();
     //client
     @ManyToOne
     @JoinColumn(name = "proprietaire")
@@ -73,12 +75,12 @@ public class Image {
         this.partage = partage;
     }
 
-//    public List<Photo> getPhotos() {
-//        return this.photos;
-//    }
-//    public void addPhoto(Photo photo) {
-//        this.photos.add(photo);
-//    }
+    public List<Photo> getPhotos() {
+        return this.photos;
+    }
+    public void addPhoto(Photo photo) {
+        this.photos.add(photo);
+    }
     
      public Client getProprietaire() {
          return proprietaire;

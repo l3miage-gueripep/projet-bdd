@@ -18,19 +18,19 @@ public class Photo {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "parametres")
+    @Column
     private String parametres;
 
-    @Column(name = "texte_descriptif")
+    @Column
     private String texteDescriptif;
 
 //associations
     @ManyToMany 
     private List<Impression> impressions = new ArrayList<>();
-    //lien avec image
-//    @ManyToOne
-//    @JoinColumn(name = "image_id")
-//    private Image image;
+    //    lien avec image
+    @ManyToOne
+    @JoinColumn(name = "image_id")
+    private Image image;
     //tirage
     @ManyToOne
     @JoinColumn(name = "tirage_id")
@@ -85,13 +85,13 @@ public class Photo {
         impression.addPhoto(this);
     }
 
-//    public Image getImage() {
-//        return image;
-//    }
-//
-//    public void setImage(Image image) {
-//        this.image = image;
-//    }
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
+    }
 
     public Tirage getTirage() {
         return tirage;
