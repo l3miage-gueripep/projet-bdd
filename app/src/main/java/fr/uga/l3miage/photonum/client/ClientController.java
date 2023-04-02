@@ -61,6 +61,16 @@ public class ClientController {
         }
     }
 
+    @DeleteMapping("/clients")
+    public void deleteClients(){
+        //delete all clients
+        clientService.reset();
+    }
+
+
+
+
+
     // Si vous avez la foie mais pas facile à implémenter
     // @DeleteMapping("/clients/{id}")
     // public void deleteclient(@PathVariable("id") @NotNull Long id) {

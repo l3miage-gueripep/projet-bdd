@@ -12,6 +12,8 @@ public interface ClientService extends BaseService<Client, Long> {
 
     Client save(Client client);
 
+    void reset();
+
     Collection<Client> searchByid(String query);
 
 

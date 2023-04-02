@@ -2,6 +2,7 @@ package fr.uga.l3miage.photonum.service;
 
 import java.util.Collection;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +11,7 @@ import fr.uga.l3miage.photonum.data.repo.ClientRepository;
 
 
 @Service
+@Transactional
 public class ClientServiceImpl implements ClientService{
 
     private final ClientRepository clientRepository;
@@ -42,6 +44,10 @@ public class ClientServiceImpl implements ClientService{
     @Override
     public Collection<Client> searchByid(String query) {
         return clientRepository.searchByid(query);
+    }
+
+    public void reset(){
+        clientRepository.deleteAll();
     }
 
     

@@ -25,14 +25,13 @@ public class Image {
     @Column(name = "partage")
     private Boolean partage;
     
-    //lien :
-    //photos
+    //images
     @OneToMany(mappedBy = "image", cascade = CascadeType.REMOVE)
     private List<Photo> photos = new ArrayList<>();
     //client
-    @ManyToOne
-    @JoinColumn(name = "proprietaire")
-    private Client proprietaire;
+    // @ManyToOne
+    // @JoinColumn(name = "proprietaire")
+    // private Client proprietaire;
 
     public Image(){
         this.partage = false;
@@ -84,12 +83,12 @@ public class Image {
         // photo.setImage(this); //association
     }
     
-    public Client getProprietaire() {
-        return proprietaire;
-    }
-    public void setProprietaire(Client proprietaire) {
-        this.proprietaire = proprietaire;
-    }
+    // public Client getProprietaire() {
+    //     return proprietaire;
+    // }
+    // public void setProprietaire(Client proprietaire) {
+    //     this.proprietaire = proprietaire;
+    // }
 
     
     

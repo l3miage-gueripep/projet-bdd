@@ -29,9 +29,9 @@ public class Article {
     private List<Commande> commandes = new ArrayList<>();
 
     //impression
-    @ManyToOne
-    private Impression impression;
-    
+//    @ManyToOne
+//    private Impression impression;
+//
     // constructors, getters, and setters
     public Long getId(){
         return id;
@@ -63,11 +63,11 @@ public class Article {
     public void setCommandes(List<Commande> commandes) {
         this.commandes = commandes;
     }
-    public Impression getImpression() {
-        return impression;
-    }
-    public void setImpression(Impression impression) {
-        this.impression = impression;
-    }
+//    public Impression getImpression() {
+//        return impression;
+//    }
+//    public void setImpression(Impression impression) {
+//        this.impression = impression;
+//    }
     
 }

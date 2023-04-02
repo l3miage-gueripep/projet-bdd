@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import fr.uga.l3miage.photonum.data.domain.Article;
 import fr.uga.l3miage.photonum.data.domain.Client;
 import fr.uga.l3miage.photonum.data.domain.Photo;
@@ -18,12 +20,14 @@ public class Impression {
 
     protected String nom;
     //associations
-    @OneToMany
-    private List<Article> articles = new ArrayList<>();
+//    @OneToMany(fetch = FetchType.EAGER)
+//    private List<Article> articles = new ArrayList<>();
     //client
-    @ManyToOne
+    @JsonManagedReference
+    @ManyToOne(fetch = FetchType.EAGER)
     private Client commanditaire;
     //photo
+
     @ManyToMany
     private List<Photo> photos = new ArrayList<>();
     
@@ -40,12 +44,12 @@ public class Impression {
     public void setNom(String nom) {
         this.nom = nom;
     }
-    public List<Article> getArticles() {
-        return articles;
-    }
-    public void setArticles(List<Article> articles) {
-        this.articles = articles;
-    }
+//    public List<Article> getArticles() {
+//        return articles;
+//    }
+//    public void setArticles(List<Article> articles) {
+//        this.articles = articles;
+//    }
     public Client getCommanditaire() {
         return commanditaire;
     }

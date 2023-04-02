@@ -9,12 +9,9 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface ClientMapper {
-
     ClientDTO entityToDTO(Client client);
-
     Collection<ClientDTO> entityToDTO(Iterable<Client> clients);
-
     Client dtoToEntity(ClientDTO client);
-    
     Collection<Client> dtoToEntity(Iterable<ClientDTO> clients);
+
 }

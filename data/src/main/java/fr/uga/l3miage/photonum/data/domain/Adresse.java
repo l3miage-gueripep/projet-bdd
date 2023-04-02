@@ -18,9 +18,9 @@ public class Adresse {
     private String rue;
     //getters et setters
 
-    @ManyToOne
-    @JoinColumn(name = "proprietaire_id")
-    private Client proprietaire;
+    // @ManyToOne
+    // @JoinColumn(name = "proprietaire_id")
+    // private Client proprietaire;
 
     public Long getId() {
         return id;

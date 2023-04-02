@@ -3,7 +3,9 @@ package fr.uga.l3miage.photonum.commande;
 import java.util.Collection;
 
 import fr.uga.l3miage.photonum.data.domain.Commande;
+import org.mapstruct.Mapper;
 
+@Mapper(componentModel = "spring")
 public interface CommandeMapper {
 
     CommandeDTO entityToDTO(Commande commande);

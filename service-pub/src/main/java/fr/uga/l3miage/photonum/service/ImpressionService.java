@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public interface ImpressionService extends BaseService<Impression, Long> {
 
-    Impression save(Impression impression);
+    Impression save(Long clientId, Impression impression) throws EntityNotFoundException;
 
     Collection<Impression> searchByid(String query);
 

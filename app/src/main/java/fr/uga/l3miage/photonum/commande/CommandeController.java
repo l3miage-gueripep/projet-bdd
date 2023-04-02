@@ -29,7 +29,7 @@ public class CommandeController {
         this.commandeMapper = commandeMapper;
     }
 
-    @PostMapping(value = "/impressions", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/commandes", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
     public CommandeDTO newImpression(@RequestBody @Valid CommandeDTO impression) {
         var saved = commandeService.save(commandeMapper.dtoToEntity(impression));

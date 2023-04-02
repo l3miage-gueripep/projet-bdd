@@ -22,8 +22,8 @@ public class Commande {
     private Float prixTotal;
 
     //lien avec client
-    @ManyToOne
-    private Client client;
+    // @ManyToOne
+    // private Client client;
 
 
     // getters, and setters
@@ -50,11 +50,11 @@ public class Commande {
     public void setPrixTotal(Float prixTotal){
         this.prixTotal= prixTotal;
     }
-    public Client getClient() {
-        return client;
-    }
-    public void setClient(Client client) {
-        this.client = client;
-    }
+    // public Client getClient() {
+    //     return client;
+    // }
+    // public void setClient(Client client) {
+    //     this.client = client;
+    // }
     
 }

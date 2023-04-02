@@ -35,11 +35,17 @@ public class ImpressionController {
         this.impressionMapper = impressionMapper;
     }
 
-    @PostMapping(value = "/impressions", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/clients/{id}/impression", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public ImpressionDTO newImpression(@RequestBody @Valid ImpressionDTO impression) {
-        var saved = impressionService.save(impressionMapper.dtoToEntity(impression));
-        return impressionMapper.entityToDTO(saved);
+    public ImpressionDTO newImpression(@PathVariable("id") @NotNull Long clientId, @RequestBody @Valid ImpressionDTO impression) {
+        try {
+            var saved = impressionService.save(clientId, impressionMapper.dtoToEntity(impression));
+            return impressionMapper.entityToDTO(saved);
+        } catch (EntityNotFoundException e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, null, e);
+        } catch (IllegalArgumentException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, null, e);
+        }
     }
 
 
