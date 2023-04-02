@@ -28,9 +28,9 @@ public class Photo {
     @ManyToMany 
     private List<Impression> impressions = new ArrayList<>();
     //lien avec image
-    @ManyToOne
-    @JoinColumn(name = "image_id")
-    private Image image;
+//    @ManyToOne
+//    @JoinColumn(name = "image_id")
+//    private Image image;
     //tirage
     @ManyToOne
     @JoinColumn(name = "tirage_id")
@@ -85,13 +85,13 @@ public class Photo {
         impression.addPhoto(this);
     }
 
-    public Image getImage() {
-        return image;
-    }
-
-    public void setImage(Image image) {
-        this.image = image;
-    }
+//    public Image getImage() {
+//        return image;
+//    }
+//
+//    public void setImage(Image image) {
+//        this.image = image;
+//    }
 
     public Tirage getTirage() {
         return tirage;

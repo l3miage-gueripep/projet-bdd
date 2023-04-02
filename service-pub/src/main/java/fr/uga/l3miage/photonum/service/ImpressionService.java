@@ -13,6 +13,4 @@ public interface ImpressionService extends BaseService<Impression, Long> {
 
     Collection<Impression> searchByid(String query);
 
-
-
 }

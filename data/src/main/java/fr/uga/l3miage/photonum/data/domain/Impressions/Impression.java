@@ -23,7 +23,6 @@ public class Impression {
 //    @OneToMany(fetch = FetchType.EAGER)
 //    private List<Article> articles = new ArrayList<>();
     //client
-    @JsonManagedReference
     @ManyToOne(fetch = FetchType.EAGER)
     private Client commanditaire;
     //photo

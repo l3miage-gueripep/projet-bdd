@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import fr.uga.l3miage.photonum.data.domain.Impressions.Impression;
 import jakarta.persistence.*;
@@ -31,8 +32,9 @@ public class Client {
     private String address;
 
     //lien avec images
-    // @OneToMany(mappedBy = "proprietaire")
-    // private List<Image> images = new ArrayList<>();
+    @JsonIgnore
+    @OneToMany(mappedBy = "proprietaire")
+    private List<Image> images = new ArrayList<>();
     //lien avec commandes
     // @OneToMany(mappedBy = "client")
     // private List<Commande> commandes = new ArrayList<>();
@@ -40,9 +42,8 @@ public class Client {
     // @OneToMany(mappedBy = "proprietaire")
     // private List<Adresse> adresses = new ArrayList<>();
     //impression
-    @JsonBackReference
+    @JsonIgnore
     @OneToMany(mappedBy = "commanditaire")
-
     private List<Impression> impressions = new ArrayList<>();
     // constructors, getters, and setters
 
@@ -95,13 +96,17 @@ public class Client {
         this.address = address;
     }
 
-    // public List<Image> getImages() {
-    //     return images;
-    // }
+     public List<Image> getImages() {
+         return images;
+     }
 
-    // public void setImages(List<Image> images) {
-    //     this.images = images;
-    // }
+     public void setImages(List<Image> images) {
+         this.images = images;
+     }
+
+     public void addImage(Image image){
+        this.images.add(image);
+     }
 
     // public List<Commande> getCommandes() {
     //     return commandes;

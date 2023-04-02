@@ -12,4 +12,5 @@ public interface ImpressionMapper {
     Collection<ImpressionDTO> entityToDTO(Iterable<Impression> impressions);
     Impression dtoToEntity(ImpressionDTO impression);
     Collection<Impression> dtoToEntity(Iterable<ImpressionDTO> impressions);
+
 }

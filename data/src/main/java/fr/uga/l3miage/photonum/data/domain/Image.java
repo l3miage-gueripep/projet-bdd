@@ -3,6 +3,7 @@ package fr.uga.l3miage.photonum.data.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -26,12 +27,12 @@ public class Image {
     private Boolean partage;
     
     //images
-    @OneToMany(mappedBy = "image", cascade = CascadeType.REMOVE)
-    private List<Photo> photos = new ArrayList<>();
+/*    @OneToMany(mappedBy = "image", cascade = CascadeType.REMOVE)
+    private List<Photo> photos = new ArrayList<>();*/
     //client
-    // @ManyToOne
-    // @JoinColumn(name = "proprietaire")
-    // private Client proprietaire;
+    @ManyToOne
+    @JoinColumn(name = "proprietaire")
+    private Client proprietaire;
 
     public Image(){
         this.partage = false;
@@ -68,27 +69,23 @@ public class Image {
     public Boolean getPartage() {
         return partage;
     }
-    public void setPartage(Boolean partage) throws Exception {
-        if(this.partage){
-            throw new Exception("un fichier ne peut pas etre départagé");
-        }
+    public void setPartage(Boolean partage){
         this.partage = partage;
     }
 
-    public List<Photo> getPhotos() {
-        return this.photos;
-    }
-    public void addPhoto(Photo photo) {
-        this.photos.add(photo);
-        // photo.setImage(this); //association
-    }
+//    public List<Photo> getPhotos() {
+//        return this.photos;
+//    }
+//    public void addPhoto(Photo photo) {
+//        this.photos.add(photo);
+//    }
     
-    // public Client getProprietaire() {
-    //     return proprietaire;
-    // }
-    // public void setProprietaire(Client proprietaire) {
-    //     this.proprietaire = proprietaire;
-    // }
+     public Client getProprietaire() {
+         return proprietaire;
+     }
+     public void setProprietaire(Client proprietaire) {
+         this.proprietaire = proprietaire;
+     }
 
     
     

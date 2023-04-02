@@ -18,7 +18,6 @@ public record ImpressionDTO(
 //    @NotEmpty(message = "articles of the impression is mandatory")
 //    List<Article> articles,
     //client
-//    @NotEmpty(message = "client of the impression is mandatory")
     @Null
     Client commanditaire
     //photo
